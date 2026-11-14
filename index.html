@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Speed & Accuracy Tester</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Typing Speed Tester</h1>
+      <p>Start typing the passage below to begin your 60-second test.</p>
+    </header>
+
+    <section class="telemetry-grid" aria-label="Live typing metrics">
+      <div class="stat-card">
+        <span class="stat-label">Time Left</span>
+        <span class="stat-value" id="time-display">60s</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Mistakes</span>
+        <span class="stat-value" id="mistakes-display">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Net WPM</span>
+        <span class="stat-value" id="wpm-display">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value" id="accuracy-display">100%</span>
+      </div>
+    </section>
+
+    <section class="typing-area">
+      <div id="quote-display" class="quote-display" aria-live="polite"></div>
+      <textarea
+        id="quote-input"
+        class="quote-input"
+        placeholder="Click here and start typing..."
+        spellcheck="false"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+      ></textarea>
+    </section>
+
+    <div class="actions">
+      <button id="restart-btn" class="btn-primary" type="button">Restart Test</button>
+    </div>
+
+    <div id="result-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <h2>Test Complete!</h2>
+        <p id="final-summary"></p>
+        <button id="modal-restart-btn" class="btn-primary" type="button">Try Another Quote</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
